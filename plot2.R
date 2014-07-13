@@ -12,7 +12,6 @@ plot2 <- function ()
         pwData <- rbind(powerData[with(powerData, Date == '1/2/2007'),], powerData[with(powerData, Date == '2/2/2007'),])  
         
         pwData[, Global_active_power := as.numeric(Global_active_power)]
-        pwData[, cVoltage := as.numeric(Voltage)]
         pwData[, DateTime := paste(Date, Time, sep=" ")]
         pwData[, cDateTime := as.POSIXct(strptime(DateTime, format='%d/%m/%Y %H:%M:%S', tz='GMT'))]
         
