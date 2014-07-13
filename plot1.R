@@ -1,6 +1,9 @@
 ## plot1 for cleaning data course/project1
 library(data.table)
-setwd("/home/wquan/classes/exploratoryDataAnalysis/proj1")
+#for linux
+#setwd("/home/wquan/classes/exploratoryDataAnalysis/proj1")
+## for mac
+setwd("/Users/quan6530/classes/exploratoryDataAnalysis/proj1")
 
 plot1 <- function ()
 {
@@ -8,6 +11,11 @@ plot1 <- function ()
   
   pwData <- rbind(powerData[with(powerData, Date == '16/12/2006'),], powerData[with(powerData, Date == '17/12/2006'),])  
   
+  
+  #hist(as.numeric(pwData$Global_active_power),xlab="Globa Active Power(kilowatts)",main="Global Active Power",col="red")
+  
+  png(filename="plot1.png",width=480, height=480, units="px")
   hist(as.numeric(pwData$Global_active_power),xlab="Globa Active Power(kilowatts)",main="Global Active Power",col="red")
+  dev.off()
   
 }
