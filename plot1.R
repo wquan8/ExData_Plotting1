@@ -19,3 +19,5 @@ plot1 <- function ()
   dev.off()
   
 }
+
+plot1()

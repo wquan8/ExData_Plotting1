@@ -23,3 +23,5 @@ plot2 <- function ()
         dev.off()
         
 }
+
+plot2()
